@@ -1,39 +1,49 @@
 package com.example.assignment_6
 
-import android.annotation.SuppressLint
+
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Recycler
+import com.example.assignment_6.R.id.deleteButton
+import com.example.assignment_7.ExpenseAdapter
 
 class MainActivity : AppCompatActivity() {
-@SuppressLint("MissingInflatedId")
-override fun onCreate(savedInstanceState:Bundle?){
-    super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
 
-    val expenseName=findViewById<EditText>(R.id.ExpenseName)
-    val amount=findViewById<EditText>(R.id.Amount)
-    val addButton = findViewById<Button>(R.id.AddExpense)
-    val list= findViewById<RecyclerView>(R.id.recycler)
+    private lateinit var expenseAdapter: ExpenseAdapter
+    private lateinit var etExpenseName: EditText
+    private lateinit var etAmount: EditText
+    private lateinit var btnAddExpense: Button
+    private lateinit var recyclerView: RecyclerView
+    private val expenseList = mutableListOf<Expense>()
 
-    val expenses = MutableList()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-    addButton.setOnClickListener{
-        val name= expenseName.text.toString()
-        val price=amount.text.toString()
-       if (name.isNotEmpty() && price.isNotEmpty()){
 
-       }
+        etExpenseName= findViewById(R.id.ExpenseName)
+        etAmount= findViewById(R.id.Amount)
+        btnAddExpense= findViewById(R.id.AddExpense)
+
+        recyclerView= findViewById(R.id.recycler)
+
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        expenseAdapter = ExpenseAdapter(expenseList)
+        recyclerView.adapter = expenseAdapter
+
+        btnAddExpense.setOnClickListener {
+            val name = etExpenseName.text.toString().trim()
+            val amount = etAmount.text.toString().trim()
+
+            if (name.isNotEmpty() && amount.isNotEmpty()) {
+                expenseList.add(Expense(name, amount))
+                expenseAdapter.notifyDataSetChanged()
+
+        }
     }
+
 }
-
-    }
+}
