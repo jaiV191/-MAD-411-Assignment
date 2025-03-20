@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="180dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -27,13 +27,19 @@
         tools:layout_editor_absoluteX="-16dp"
         tools:layout_editor_absoluteY="80dp" />
 
+
     <Button
         android:id="@+id/deleteButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Delete"
-        tools:ignore="MissingConstraints"
-        />
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/details"
+        android:layout_width="142dp"
+        android:layout_height="37dp"
+        android:text="Show details"
 
 
 </LinearLayout>
