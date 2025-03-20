@@ -2,6 +2,7 @@ package com.example.assignment_6
 
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
@@ -42,8 +43,34 @@ class MainActivity : AppCompatActivity() {
                 expenseList.add(Expense(name, amount))
                 expenseAdapter.notifyDataSetChanged()
 
+            }
         }
-    }
+
 
 }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("ActivityLifecycle", "App started")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("ActivityLifecycle", "App resumed")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("ActivityLifecycle", "App paused")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("ActivityLifecycle", "App Stopped")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("ActivityLifecycle", "App destroyed")
+    }
 }

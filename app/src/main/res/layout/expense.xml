@@ -39,7 +39,7 @@
         android:id="@+id/details"
         android:layout_width="142dp"
         android:layout_height="37dp"
-        android:text="Show details"
+        android:text="Show details"/>
 
 
 </LinearLayout>
