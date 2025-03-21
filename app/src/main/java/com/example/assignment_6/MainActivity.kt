@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var expenseAdapter: ExpenseAdapter
+    private lateinit var expenseAdapter: Adapter
     private lateinit var etExpenseName: EditText
     private lateinit var etAmount: EditText
     private lateinit var btnAddExpense: Button
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recycler)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
-        expenseAdapter = ExpenseAdapter(expenseList, this)
+        expenseAdapter = Adapter(expenseList, this)
         recyclerView.adapter = expenseAdapter
 
         btnAddExpense.setOnClickListener {

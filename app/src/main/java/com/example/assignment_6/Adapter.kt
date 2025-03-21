@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ExpenseAdapter(private val expenseList: MutableList<Expense>, private val context: Context) : RecyclerView.Adapter<ExpenseAdapter.ViewHolder>() {
+class Adapter(private val expenseList: MutableList<Expense>, private val context: Context) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val expenseName: TextView = itemView.findViewById(R.id.Name)
