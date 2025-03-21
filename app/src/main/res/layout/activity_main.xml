@@ -12,6 +12,10 @@
     android:paddingTop="16dp"
     tools:context=".MainActivity"
     android:fitsSystemWindows="true">
+    <FrameLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/ExpenseName"
@@ -40,5 +44,11 @@
         android:layout_width="match_parent"
         android:layout_height="492dp"
         android:layout_marginBottom="10dp" />
+
+    <FrameLayout
+        android:id="@+id/footerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 
 </LinearLayout>
