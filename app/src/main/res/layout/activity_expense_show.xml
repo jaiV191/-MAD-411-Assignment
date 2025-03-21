@@ -6,21 +6,18 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/nameDet"
-        android:layout_width="wrap_content"
-        android:layout_height="41dp"
-        android:text="expense_details"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-       />
-
-
-    <TextView
-        android:id="@+id/amount_details"
+        android:id="@+id/expense_name_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Amount: " />
+        android:text="Expense Name"
+        android:textSize="18sp"
+        android:paddingBottom="8dp"/>
 
-
+    <TextView
+        android:id="@+id/expense_amount_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amount"
+        android:textSize="18sp"
+        android:paddingBottom="8dp"/>
 </LinearLayout>
