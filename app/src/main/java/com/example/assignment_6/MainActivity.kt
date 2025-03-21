@@ -23,13 +23,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnAddExpense: Button
     private lateinit var btnShowDetails: Button
     private lateinit var recyclerView: RecyclerView
-    private val expenseList = mutableListOf<Expense>()
     private lateinit var nameDetail:TextView
     private lateinit var nameExp:TextView
+    private val expenseList = mutableListOf<Expense>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
 
@@ -37,10 +38,11 @@ class MainActivity : AppCompatActivity() {
         etAmount= findViewById(R.id.Amount)
         btnAddExpense= findViewById(R.id.AddExpense)
 
+        btnShowDetails = findViewById(R.id.details)
         recyclerView= findViewById(R.id.recycler)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
-        expenseAdapter = ExpenseAdapter(expenseList)
+        expenseAdapter = ExpenseAdapter(expenseList, this)
         recyclerView.adapter = expenseAdapter
 
         btnAddExpense.setOnClickListener {

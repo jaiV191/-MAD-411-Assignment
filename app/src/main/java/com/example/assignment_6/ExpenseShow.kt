@@ -1,15 +1,8 @@
 package com.example.assignment_6
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.assignment_6.R.id.details
 
 class ExpenseShow : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,10 +10,19 @@ class ExpenseShow : AppCompatActivity() {
         setContentView(R.layout.activity_expense_show)
 
 
+                val nameDetail: TextView = findViewById(R.id.nameDet)
+                val amountDetail: TextView = findViewById(R.id.amount_details)
+
+                val expenseName = intent.getStringExtra("Expense_Name")
+                val expenseAmount = intent.getStringExtra("Expense_amount")
+
+                nameDetail.text = "Expense: $expenseName"
+                amountDetail.text = "Amount: $$expenseAmount"
+            }
+        }
 
 
 
 
 
-    }
-}
+
